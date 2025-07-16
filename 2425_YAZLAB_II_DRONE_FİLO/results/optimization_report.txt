@@ -1,0 +1,53 @@
+DRONE FİLO OPTİMİZASYONU RAPORU
+============================================================
+
+Problem Tanımı:
+- Drone sayısı: 10
+- Teslimat noktası sayısı: 50
+- No-fly zone sayısı: 5
+
+Drone Detayları:
+  Drone 1: 4.5kg, 6818.167613581048mAh, 8.0m/s
+  Drone 2: 3.8kg, 6263.876575767113mAh, 10.0m/s
+  Drone 3: 5.2kg, 11625.718949517179mAh, 7.5m/s
+  Drone 4: 2.5kg, 5747.0963817500215mAh, 12.0m/s
+  Drone 5: 6.0kg, 16581.117725952994mAh, 6.0m/s
+  Drone 6: 4.0kg, 10311.447011197932mAh, 9.0m/s
+  Drone 7: 3.2kg, 7317.091296813975mAh, 11.0m/s
+  Drone 8: 5.8kg, 14306.151760565654mAh, 6.5m/s
+  Drone 9: 2.8kg, 6207.286109742459mAh, 13.0m/s
+  Drone 10: 4.8kg, 10995.523396873818mAh, 8.5m/s
+Toplam kapasite: 42.6kg
+
+Teslimat Detayları:
+  Toplam ağırlık: 113.4kg
+  Öncelik dağılımı: {4: 12, 5: 12, 3: 10, 2: 10, 1: 6}
+
+Algoritma Sonuçları:
+----------------------------------------
+
+A*:
+  - Teslimat sayısı: 13/50
+  - Teslimat oranı: %26.0
+  - Çalışma süresi: 0.000 saniye
+  - Toplam maliyet: 20220.52
+
+CSP:
+  - Teslimat sayısı: 8/50
+  - Teslimat oranı: %26.7
+  - Çalışma süresi: 0.286 saniye
+
+GA:
+  - Teslimat sayısı: 17/50
+  - Teslimat oranı: %34.0
+  - Çalışma süresi: 3.725 saniye
+  - Fitness skoru: 7550.36
+
+Multi-Trip:
+  - Teslimat sayısı: 50/50
+  - Teslimat oranı: %100.0
+  - Çalışma süresi: 0.125 saniye
+
+Öneriler ve Değerlendirme:
+✅ Yüksek teslimat oranı elde edildi
+⚠️ Kapasite sınırında - ek drone gerekebilir

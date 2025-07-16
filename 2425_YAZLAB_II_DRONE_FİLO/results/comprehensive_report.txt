@@ -1,0 +1,197 @@
+================================================================================
+   DRONE FİLO OPTİMİZASYONU - KAPSAMLI PERFORMANS RAPORU
+   Kocaeli Üniversitesi TBL331 - Yazılım Geliştirme Lab II
+   Rapor Tarihi: 2025-07-16 07:49:26
+================================================================================
+
+📋 PROBLEM TANIMI
+--------------------------------------------------
+Drone Sayısı: 10
+Teslimat Noktası Sayısı: 50
+No-Fly Zone Sayısı: 5
+
+🚁 DRONE DETAYLARI:
+  Drone  1: Kapasite= 4.5kg, Batarya= 6818mAh, Hız= 8.0m/s, Konum=( 10, 10)
+  Drone  2: Kapasite= 3.8kg, Batarya= 6263mAh, Hız=10.0m/s, Konum=( 25, 35)
+  Drone  3: Kapasite= 5.2kg, Batarya=11625mAh, Hız= 7.5m/s, Konum=( 45, 55)
+  Drone  4: Kapasite= 2.5kg, Batarya= 5747mAh, Hız=12.0m/s, Konum=( 75, 25)
+  Drone  5: Kapasite= 6.0kg, Batarya=16581mAh, Hız= 6.0m/s, Konum=( 35, 75)
+  Drone  6: Kapasite= 4.0kg, Batarya=10311mAh, Hız= 9.0m/s, Konum=( 90, 40)
+  Drone  7: Kapasite= 3.2kg, Batarya= 7317mAh, Hız=11.0m/s, Konum=( 60, 15)
+  Drone  8: Kapasite= 5.8kg, Batarya=14306mAh, Hız= 6.5m/s, Konum=( 15, 85)
+  Drone  9: Kapasite= 2.8kg, Batarya= 6207mAh, Hız=13.0m/s, Konum=( 85, 75)
+  Drone 10: Kapasite= 4.8kg, Batarya=10995mAh, Hız= 8.5m/s, Konum=( 50,  5)
+  Toplam Kapasite: 42.6kg
+  Toplam Batarya: 96,173.47682176219mAh
+
+📦 TESLİMAT ANALİZİ:
+  Toplam Ağırlık: 113.4kg
+  Ortalama Ağırlık: 2.27kg
+  Kapasite Kullanım Oranı: %266.2
+  Öncelik Dağılımı: {1: 6, 2: 10, 3: 10, 4: 12, 5: 12}
+
+🚫 NO-FLY ZONE ANALİZİ:
+  Zone 1: Aktif 0-60dk
+  Zone 2: Aktif 20-80dk
+  Zone 3: Aktif 0-40dk
+  Zone 4: Aktif 40-100dk
+  Zone 5: Aktif 15-75dk
+
+🎯 ALGORİTMA SONUÇLARI
+------------------------------------------------------------
+Algoritma       Teslimat     Oran(%)  Süre(s)    Verimlilik
+------------------------------------------------------------
+A*               13/50         26.0     0.000   8672.39
+CSP               8/50         26.7     0.286     27.89
+GA               17/50         34.0     3.725      4.56
+Multi-Trip       50/50        100.0     0.125    398.29
+
+📊 A* DETAYLI ANALİZ:
+  ✅ Başarı Durumu: Başarılı
+  📈 Teslimat Sayısı: 13/50
+  🎯 Teslimat Oranı: %26.0
+  ⏱️ Çalışma Süresi: 0.000 saniye
+  💰 Toplam Maliyet: 20220.52
+
+📊 CSP DETAYLI ANALİZ:
+  ✅ Başarı Durumu: Başarılı
+  📈 Teslimat Sayısı: 8/50
+  🎯 Teslimat Oranı: %26.7
+  ⏱️ Çalışma Süresi: 0.286 saniye
+
+📊 GA DETAYLI ANALİZ:
+  ✅ Başarı Durumu: Başarılı
+  📈 Teslimat Sayısı: 17/50
+  🎯 Teslimat Oranı: %34.0
+  ⏱️ Çalışma Süresi: 3.725 saniye
+  🧬 Fitness Skoru: 7550.36
+
+📊 MULTI-TRIP DETAYLI ANALİZ:
+  ✅ Başarı Durumu: Başarılı
+  📈 Teslimat Sayısı: 50/50
+  🎯 Teslimat Oranı: %100.0
+  ⏱️ Çalışma Süresi: 0.125 saniye
+  🔄 Toplam Tur Sayısı: 32
+
+🚁 DRONE PERFORMANS ANALİZİ
+------------------------------------------------------------
+📊 DRONE PERFORMANS TABLOSU:
+Drone  Tur  Teslimat  Mesafe(m)  Şarj  Kullanım(%)
+--------------------------------------------------
+1      4    8         678        0     0.0       
+2      4    5         485        0     0.0       
+3      4    8         516        0     0.0       
+4      3    3         351        0     0.0       
+5      3    5         465        0     0.0       
+6      3    4         314        0     0.0       
+7      3    4         306        0     0.0       
+8      3    6         442        0     0.0       
+9      2    2         240        0     0.0       
+10     3    5         415        0     0.0       
+
+🔍 DRONE DETAYLI PERFORMANS:
+
+🚁 DRONE 1 (Kap: 4.5kg, Bat: 15000mAh):
+   📦 8 teslimat / 4 tur
+   🗺️ 678m mesafe
+   🔋 0 şarj / %0.0 kullanım
+   📋 İlk Turlar: T1(4), T2(2), T3(1), ...
+
+🚁 DRONE 2 (Kap: 3.8kg, Bat: 12000mAh):
+   📦 5 teslimat / 4 tur
+   🗺️ 485m mesafe
+   🔋 0 şarj / %0.0 kullanım
+   📋 İlk Turlar: T1(2), T2(1), T3(1), ...
+
+🚁 DRONE 3 (Kap: 5.2kg, Bat: 18000mAh):
+   📦 8 teslimat / 4 tur
+   🗺️ 516m mesafe
+   🔋 0 şarj / %0.0 kullanım
+   📋 İlk Turlar: T1(3), T2(2), T3(2), ...
+
+🚁 DRONE 4 (Kap: 2.5kg, Bat: 10000mAh):
+   📦 3 teslimat / 3 tur
+   🗺️ 351m mesafe
+   🔋 0 şarj / %0.0 kullanım
+   📋 İlk Turlar: T1(1), T2(1), T3(1), 
+
+🚁 DRONE 5 (Kap: 6.0kg, Bat: 22000mAh):
+   📦 5 teslimat / 3 tur
+   🗺️ 465m mesafe
+   🔋 0 şarj / %0.0 kullanım
+   📋 İlk Turlar: T1(2), T2(2), T3(1), 
+
+🚁 DRONE 6 (Kap: 4.0kg, Bat: 14000mAh):
+   📦 4 teslimat / 3 tur
+   🗺️ 314m mesafe
+   🔋 0 şarj / %0.0 kullanım
+   📋 İlk Turlar: T1(2), T2(1), T3(1), 
+
+🚁 DRONE 7 (Kap: 3.2kg, Bat: 11000mAh):
+   📦 4 teslimat / 3 tur
+   🗺️ 306m mesafe
+   🔋 0 şarj / %0.0 kullanım
+   📋 İlk Turlar: T1(2), T2(1), T3(1), 
+
+🚁 DRONE 8 (Kap: 5.8kg, Bat: 20000mAh):
+   📦 6 teslimat / 3 tur
+   🗺️ 442m mesafe
+   🔋 0 şarj / %0.0 kullanım
+   📋 İlk Turlar: T1(3), T2(2), T3(1), 
+
+🚁 DRONE 9 (Kap: 2.8kg, Bat: 9000mAh):
+   📦 2 teslimat / 2 tur
+   🗺️ 240m mesafe
+   🔋 0 şarj / %0.0 kullanım
+   📋 İlk Turlar: T1(1), T2(1), 
+
+🚁 DRONE 10 (Kap: 4.8kg, Bat: 16000mAh):
+   📦 5 teslimat / 3 tur
+   🗺️ 415m mesafe
+   🔋 0 şarj / %0.0 kullanım
+   📋 İlk Turlar: T1(2), T2(2), T3(1), 
+
+🏆 PERFORMANS KARŞILAŞTIRMASI:
+   ✅ En İyi: Drone 1 (8 teslimat)
+   ⚠️ En Düşük: Drone 9 (2 teslimat)
+
+📦 TESLİMAT ANALİZİ
+----------------------------------------
+Öncelik  Toplam  Teslim  Oran(%) 
+--------------------------------
+5        12      12      100.0   
+4        12      12      100.0   
+3        10      10      100.0   
+2        10      10      100.0   
+1        6       6       100.0   
+
+⏱️ ZAMAN KARMAŞIKLIĞI ANALİZİ
+--------------------------------------------------
+Big O Notasyonu:
+🎯 A*: O(b^d) - b:branching (dallanma), d:depth(derinlik) Her drone'un gideceği nokta sayısı arttıkça (d) ve bağlantılı düğüm sayısı büyüdükçe (b), arama ağacı katlanarak büyür. 
+🧩 CSP: O(d^n) - d:domain, n:variables Kısıtların kontrolü nedeniyle çözüm uzayı katlanarak büyür: her bir teslimatın bir drone’a atanma kombinasyonları
+🧬 GA: O(g*p*f) - g:generations, p:population, f:fitness her nesilde p adet bireyin fitness’ı hesaplanıyor
+🔄 Multi-Trip: O(t*d*n^2) - t:time, d:drones, n:deliveries Teslimatlar arası mesafeler, her drone için tekrar tekrar değerlendiriliyor
+
+📈 GERÇEK PERFORMANS:
+Algoritma    Süre(s)  Verimlilik
+--------------------------------
+A*           0.000    8672.39   
+CSP          0.286    27.89     
+GA           3.725    4.56      
+Multi-Trip   0.125    398.29    
+
+💡 ÖNERİLER VE DEĞERLENDİRME
+--------------------------------------------------
+🏆 EN İYİ ALGORİTMA: Multi-Trip
+   - Teslimat oranı: %100.0
+
+🔍 SİSTEM DEĞERLENDİRMESİ:
+   ✅ Yüksek teslimat oranı
+   ⚠️ Aşırı kapasite yükü
+
+🎯 ÖNERİLER:
+   3. 📊 Real-time monitoring ekleyin
+   4. 🔄 Adaptif algoritma seçimi
+   5. 🎯 Dinamik rota güncelleme
+
